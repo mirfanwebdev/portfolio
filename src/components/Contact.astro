@@ -23,12 +23,46 @@ const contactList = [
 ];
 ---
 
-<aside>
+<aside class="container-contact">
   {
     contactList.map((contact) => (
-      <a href={contact.url} target="_blank" rel="noopener noreferrer">
-        <span>{contact.name}</span>
+      <a
+        href={contact.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="container-link"
+      >
+        <span class="alt">{contact.name}</span>
       </a>
     ))
   }
 </aside>
+
+<style lang="scss">
+    .container-contact {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+
+        a {
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .container-link {
+            display: flex,
+            flex-direction: column;
+            align-items: center;
+
+            &:hover {
+                color: var(--color-primary);
+            }
+
+            .alt {
+                font-size: 0.75rem;
+                color: var(--text-muted);
+            }
+        }
+
+    }
+</style>
