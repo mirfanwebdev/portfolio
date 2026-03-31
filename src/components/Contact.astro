@@ -1,24 +1,31 @@
 ---
+import { Icon } from 'astro-icon/components';
+
 const contactList = [
   {
     name: "GitHub",
     url: "https://github.com/mirfanwebdev",
+    icon: "mdi:github",
   },
   {
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/m-irfan-webdev/",
+    icon: "mdi:linkedin",
   },
   {
     name: "Twitter/X",
     url: "https://x.com/mirfanwebdev",
+    icon: "mdi:twitter",
   },
   {
     name: "Instagram",
     url: "https://instagram.com/m.irfan_16",
+    icon: "mdi:instagram",
   },
   {
     name: "Email",
     url: "mailto:m.irfanwebdev@gmail.com",
+    icon: "mdi:email-outline",
   },
 ];
 ---
@@ -32,6 +39,7 @@ const contactList = [
         rel="noopener noreferrer"
         class="container-link"
       >
+        <Icon name={contact.icon} size={24} />
         <span class="alt">{contact.name}</span>
       </a>
     ))
@@ -59,10 +67,10 @@ const contactList = [
             }
 
             .alt {
+                display: block;
                 font-size: 0.75rem;
                 color: var(--text-muted);
             }
         }
-
     }
 </style>
