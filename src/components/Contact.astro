@@ -1,0 +1,34 @@
+---
+const contactList = [
+  {
+    name: "GitHub",
+    url: "https://github.com/mirfanwebdev",
+  },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/m-irfan-webdev/",
+  },
+  {
+    name: "Twitter/X",
+    url: "https://x.com/mirfanwebdev",
+  },
+  {
+    name: "Instagram",
+    url: "https://instagram.com/m.irfan_16",
+  },
+  {
+    name: "Email",
+    url: "mailto:m.irfanwebdev@gmail.com",
+  },
+];
+---
+
+<aside>
+  {
+    contactList.map((contact) => (
+      <a href={contact.url} target="_blank" rel="noopener noreferrer">
+        <span>{contact.name}</span>
+      </a>
+    ))
+  }
+</aside>
