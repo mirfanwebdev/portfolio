@@ -1,0 +1,23 @@
+---
+import Pill from "./Pill.astro";
+
+interface Props {
+  list: string[];
+  isOutline?: boolean;
+}
+
+const { list, isOutline = false } = Astro.props;
+---
+
+<div class="stacks">
+  {list.map((item) => <Pill name={item} isOutline={isOutline} />)}
+</div>
+
+<style>
+  .stacks {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+</style>
