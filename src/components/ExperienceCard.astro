@@ -1,0 +1,40 @@
+---
+import TechStack from "./TechStack.astro";
+
+interface Props {
+  dateString: string;
+  title: string;
+  description: string;
+  techStack: string[];
+}
+
+const { dateString, title, description, techStack } = Astro.props;
+---
+
+<li class="card">
+  <p class="date">{dateString}</p>
+  <div class="item">
+    <h4>{title}</h4>
+    <p>{description}</p>
+    <TechStack list={techStack} isOutline />
+  </div>
+</li>
+
+<style lang="scss">
+  .card {
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+    padding: 1.5rem 1.2rem;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-color: var(--border);
+      background-color: var(--bg-light);
+      box-shadow: var(--shadow-sm);
+      scale: 1.02;
+    }
+  }
+</style>
