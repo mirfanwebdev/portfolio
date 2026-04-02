@@ -1,0 +1,21 @@
+---
+interface Props {
+  title: string;
+  sectionId: string;
+}
+
+const { title, sectionId } = Astro.props;
+---
+
+<section id={sectionId}>
+  <h2>{title}</h2>
+  <slot />
+</section>
+
+<style lang="scss">
+  section {
+    h2 {
+      padding-bottom: 0.5rem;
+    }
+  }
+</style>
