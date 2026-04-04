@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets";
+import TechStack from "./TechStack.astro";
+
+interface Props {
+  title: string;
+  imgSrc: ImageMetadata;
+  description: string;
+  url: string;
+  repoUrl?: string;
+  techStack: string[];
+}
+
+const { title, imgSrc, description, url, repoUrl, techStack } = Astro.props;
+---
+
+<div class="card">
+  <Image src={imgSrc} alt={title} />
+
+  <div class="text-container">
+    <h3><a href={url} target="_blank" rel="noopener noreferrer">{title}</a></h3>
+    <p>{description}</p>
+    <a href={repoUrl} target="_blank" rel="noopener noreferrer"
+      >GitHub Repository</a
+    >
+    <TechStack list={techStack} />
+  </div>
+</div>
