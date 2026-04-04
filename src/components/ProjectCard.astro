@@ -20,9 +20,63 @@ const { title, imgSrc, description, url, repoUrl, techStack } = Astro.props;
   <div class="text-container">
     <h3><a href={url} target="_blank" rel="noopener noreferrer">{title}</a></h3>
     <p>{description}</p>
-    <a href={repoUrl} target="_blank" rel="noopener noreferrer"
+    <a class="repo" href={repoUrl} target="_blank" rel="noopener noreferrer"
       >GitHub Repository</a
     >
     <TechStack list={techStack} />
   </div>
 </div>
+
+<style lang="scss">
+  .card {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.25rem 1rem;
+    position: relative;
+    align-items: flex-start;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+
+    &:hover {
+      border-color: var(--border);
+      background-color: var(--bg-light);
+      box-shadow: var(--shadow-sm);
+
+      img {
+        scale: 1.05;
+      }
+
+      .text-container {
+        h3 {
+          color: var(--color-primary);
+        }
+      }
+    }
+
+    img {
+      border: 1px solid transparent;
+      border-radius: 0.5rem;
+      transition: all 0.2s ease;
+      width: 200px;
+      height: auto;
+    }
+
+    .text-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .repo {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+  }
+</style>
