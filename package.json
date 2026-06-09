@@ -12,8 +12,10 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/preact": "^5.1.5",
     "astro": "^6.1.1",
-    "astro-icon": "^1.1.5"
+    "astro-icon": "^1.1.5",
+    "preact": "^10.29.2"
   },
   "devDependencies": {
     "sass": "^1.98.0"
